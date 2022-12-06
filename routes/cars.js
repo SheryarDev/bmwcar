@@ -27,10 +27,10 @@ const Car=require('../models/Car')
 
 
 router.get('/getcars', async (req, res) => {
-    let cardata=req.carModels;
+    let cardata=req.body;
     console.log(cardata);
     try {
-        const cars = await Car.find({ carModels: req.carModels});
+        const cars = await Car.find();
         res.json(cars)
     } catch (error) {
         console.error(error.message);
