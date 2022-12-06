@@ -22,17 +22,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-//static files
-  
-//Available Routes
-// app.get("*",(req,res)=>{  
-//   res.sendFile(path.join(__dirname,"./client/build/index.html"))
-// })
+
 
 app.use('/api/auth',require('./routes/Auth'))
  app.use('/api/cars',require('./routes/cars'))
  app.use('/api/contactform',require('./routes/contactform'))
 
+//static files
+  
+Available Routes
+app.get("*",function(req,res){  
+  res.sendFile(path.join(__dirname,"./client/build/index.html"))
+})
 
 app.listen(port, () => {
   console.log(`car backend listening on port ${port}`)
