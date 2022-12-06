@@ -25,9 +25,9 @@ app.use(bodyParser.json());
 //static files
   
 //Available Routes
-app.get("*",(req,res)=>{  
-  res.sendFile(path.join(__dirname,"./client/build/index.html"))
-})
+// app.get("*",(req,res)=>{  
+//   res.sendFile(path.join(__dirname,"./client/build/index.html"))
+// })
 
 app.use('/api/auth',require('./routes/Auth'))
  app.use('/api/cars',require('./routes/cars'))
