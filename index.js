@@ -33,12 +33,12 @@ app.use('/api/auth',require('./routes/Auth'))
 //static files
 
 app.use(express.json(express.static(path.join(__dirname,"../client/build"))))
-const mypath=path.join(__dirname,"../client/build/index.html")
+const mypath=path.join(__dirname,"./client/build/index.html")
 console.log(mypath)
   
 // Available Routes
 app.get("*",(req,res)=>{  
-  res.sendFile(path.join(__dirname,"../client/build/index.html"),function(err){
+  res.sendFile(path.join(__dirname,"./client/build/index.html"),function(err){
     res.status(500).send(err);
   })
 })
