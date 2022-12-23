@@ -21,7 +21,7 @@ app.use('/api/auth',require('./routes/Auth'))
   
 //static files
 
-app.use(express.static(path.join(__dirname,"../client/build")));
+app.use(express.static(path.join(__dirname,"./client/build")));
 const mypath=path.join(__dirname,"./client/build/index.html")
 console.log(mypath)
   
@@ -34,4 +34,4 @@ app.get("*",(req,res)=>{
 
 app.listen(port, () => {
   console.log(`car backend listening on port ${port}`)
-})
+})  
