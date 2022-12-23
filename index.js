@@ -1,5 +1,6 @@
 const connectToMonog = require("./db")
 const express = require('express')
+const mongoose =require('mongoose');
 const bodyParser = require("body-parser");
 const path=require("path")
  const cors=require('cors');
@@ -28,10 +29,12 @@ app.use('/api/auth',require('./routes/Auth'))
  app.use('/api/cars',require('./routes/cars'))
  app.use('/api/contactform',require('./routes/contactform'))
 
-
+  
 //static files
 
-app.use(express.json(express.static(path.join(__dirname,"./client/build"))))
+app.use(express.json(express.static(path.join(__dirname,"../client/build"))))
+const mypath=path.join(__dirname,"../client/build/index.html")
+console.log(mypath)
   
 // Available Routes
 app.get("*",(req,res)=>{  
